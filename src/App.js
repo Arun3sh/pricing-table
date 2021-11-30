@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import { Card } from './card';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	// const type = ['Free', 'Plus', 'Pro'];
+	return (
+		<div className="App">
+			<div className="container card-container">
+				<Card type={'Free'} />
+				<Card type={'Plus'} />
+				<Card type={'Pro'} />
+			</div>
+		</div>
+	);
 }
 
 export default App;
