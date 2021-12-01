@@ -78,7 +78,7 @@ export function Card({ type }) {
 						Monthly Status Reports
 					</li>
 				</ul>
-				<button className={`btn btn-primary ${hover ? '' : 'disabled'}`}>Button</button>
+				<button className={`btn btn-warning ${hover ? '' : 'disabled'}`}>Button</button>
 			</div>
 		</div>
 	);
