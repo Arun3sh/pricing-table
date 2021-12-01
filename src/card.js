@@ -1,9 +1,18 @@
 // import App from './App';
+import { useState } from 'react';
 import { BsCheckLg, BsXLg } from 'react-icons/bs';
 
 export function Card({ type }) {
+	const [hover, setHover] = useState(false);
+
+	const style = { marginBottom: hover ? '05px' : '0px', marginTop: hover ? '-10px' : '0px' };
 	return (
-		<div className="card">
+		<div
+			className="card"
+			style={style}
+			onMouseEnter={() => setHover(true)}
+			onMouseLeave={() => setHover(false)}
+		>
 			<div className="card-body">
 				<h5 className="card-title text-muted text-center">
 					{type === 'Free' ? 'FREE' : type === 'Plus' ? 'PLUS' : 'PRO'}
@@ -69,7 +78,7 @@ export function Card({ type }) {
 						Monthly Status Reports
 					</li>
 				</ul>
-				<button className="btn btn-primary">Button</button>
+				<button className={`btn btn-primary ${hover ? '' : 'disabled'}`}>Button</button>
 			</div>
 		</div>
 	);
