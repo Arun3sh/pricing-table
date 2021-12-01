@@ -1,11 +1,12 @@
-// import App from './App';
 import { useState } from 'react';
 import { BsCheckLg, BsXLg } from 'react-icons/bs';
 
 export function Card({ type }) {
 	const [hover, setHover] = useState(false);
 
+	// Conditional styling for hover effect
 	const style = { marginBottom: hover ? '05px' : '0px', marginTop: hover ? '-10px' : '0px' };
+
 	return (
 		<div
 			className="card"
@@ -17,10 +18,12 @@ export function Card({ type }) {
 				<h5 className="card-title text-muted text-center">
 					{type === 'Free' ? 'FREE' : type === 'Plus' ? 'PLUS' : 'PRO'}
 				</h5>
+
 				<h6 className="card-price text-center">
 					${type === 'Free' ? '0' : type === 'Plus' ? '9' : '49'}
 					<span className="period">/month</span>
 				</h6>
+
 				<hr />
 				<ul className="list">
 					<li>
@@ -78,6 +81,7 @@ export function Card({ type }) {
 						Monthly Status Reports
 					</li>
 				</ul>
+
 				<button className={`btn btn-warning ${hover ? '' : 'disabled'}`}>Button</button>
 			</div>
 		</div>
